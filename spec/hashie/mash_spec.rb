@@ -140,6 +140,7 @@ describe Hashie::Mash do
   it 'logs a warning when overriding built-in methods' do
     Hashie::Mash.new('trust' => { 'two' => 2 })
 
+    expect(logger_output).to match('WARN -- Hashie:')
     expect(logger_output).to match('Hashie::Mash#trust')
   end
 
